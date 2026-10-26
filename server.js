@@ -50,6 +50,18 @@ app.post("/chat", async (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
+app.use(express.json({ limit: "20kb" }));
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(204);
+  }
+
+  next();
+});
 
 app.listen(port, "0.0.0.0", () => {
   console.log(`JARVIS backend listening on port ${port}`);
