@@ -1,0 +1,15 @@
+
+{
+  "manifest_version": 3,
+  "name": "JARVIS AI Assistant",
+  "version": "1.0.0",
+  "description": "JARVIS personal assistant",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": [
+    "https://jarvis-ai-tr3x.onrender.com/*"
+  ],
+  "action": {
+    "default_title": "JARVIS",
+    "default_popup": "popup.html"
+  }
+}
