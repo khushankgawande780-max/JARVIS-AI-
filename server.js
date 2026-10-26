@@ -30,7 +30,7 @@ app.post("/chat", async (req, res) => {
     }
 
     const result = await ai.models.generateContent({
-      model: "gemini-3.8-flash",
+      model: "gemini-3.6-flash",
       contents: message.trim().slice(0, 10000)
     });
 
